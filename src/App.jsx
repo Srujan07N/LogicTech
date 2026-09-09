@@ -1,4 +1,6 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useLocation } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { AnimatePresence } from 'framer-motion'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
@@ -10,10 +12,25 @@ import CareersPage from './pages/CareersPage'
 import ContactPage from './pages/ContactPage'
 import BlogPage from './pages/BlogPage'
 import NotFound from './pages/NotFound'
+import Loader from './components/Loader'
 
 export default function App() {
+  const [isLoading, setIsLoading] = useState(true)
+  const location = useLocation()
+
+  useEffect(() => {
+    // Simulate loading time (e.g. for fetching initial data, fonts, or images)
+    const timer = setTimeout(() => {
+      setIsLoading(false)
+    }, 2000)
+    return () => clearTimeout(timer)
+  }, [])
   return (
     <div className="min-h-screen bg-bg-light">
+      <AnimatePresence>
+        {isLoading && <Loader key="loader" />}
+      </AnimatePresence>
+
       <a
         href="#main-content"
         className="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-[100] focus:bg-white focus:text-navy-deep focus:px-4 focus:py-2 focus:rounded-md focus:shadow-lg"
@@ -23,7 +40,7 @@ export default function App() {
       <ScrollToTop />
       <Navbar />
       <main id="main-content">
-        <Routes>
+        <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/services" element={<ServicesPage />} />

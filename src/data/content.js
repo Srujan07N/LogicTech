@@ -1,10 +1,28 @@
-// Central content file. Anything in [brackets] is placeholder content —
-// swap in real company details before launch.
+import { createElement } from 'react'
 import {
   Code2, Globe, Smartphone, Cloud, GitBranch, Headset, Palette,
   ShieldCheck, BrainCircuit, Database, Search, Compass, PenTool,
   Hammer, Rocket, Users, Sparkles, Clock, LineChart, Link2,
 } from 'lucide-react'
+
+const InstagramIcon = ({ size = 24, className = '' }) => createElement(
+  'svg',
+  {
+    xmlns: 'http://www.w3.org/2000/svg',
+    width: size,
+    height: size,
+    viewBox: '0 0 24 24',
+    fill: 'none',
+    stroke: 'currentColor',
+    strokeWidth: '2',
+    strokeLinecap: 'round',
+    strokeLinejoin: 'round',
+    className
+  },
+  createElement('rect', { width: '20', height: '20', x: '2', y: '2', rx: '5', ry: '5' }),
+  createElement('path', { d: 'M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z' }),
+  createElement('line', { x1: '17.5', x2: '17.51', y1: '6.5', y2: '6.5' })
+)
 
 export const nav = [
   { label: 'Home', to: '/' },
@@ -100,7 +118,7 @@ export const blog = [
 ]
 
 export const contactInfo = {
-  email: '[Company Email]',
+  email: 'logictech968@gmail.com',
   phone: '[Phone Number]',
   address: '[Company Address]',
   hours: 'Mon \u2013 Fri, 9:00 AM \u2013 6:00 PM',
@@ -108,4 +126,5 @@ export const contactInfo = {
 
 export const socials = [
   { icon: Link2, label: 'LinkedIn', href: '#' },
+  { icon: InstagramIcon, label: 'Instagram', href: 'https://www.instagram.com/_logicatech?stkn=MWg0M2w2YXllbXV2MQ==' },
 ]

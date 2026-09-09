@@ -1,6 +1,8 @@
+import { motion } from 'framer-motion'
 import Reveal from './Reveal'
 import SectionHeading from './SectionHeading'
 import { Target, Eye, Heart } from 'lucide-react'
+import aboutImg from '../assets/about.png'
 
 const pillars = [
   { icon: Target, title: 'Mission', desc: 'Deliver practical, scalable technology that measurably moves our clients\u2019 businesses forward.' },
@@ -13,24 +15,15 @@ export default function About() {
     <section id="about" className="py-24 md:py-32 bg-white overflow-hidden">
       <div className="container-px grid lg:grid-cols-2 gap-16 items-center">
         <Reveal className="relative order-2 lg:order-1">
-          <div className="relative rounded-2xl overflow-hidden aspect-[4/5] bg-navy-deep">
-            <div
-              className="absolute inset-0 opacity-20"
-              style={{
-                backgroundImage: 'linear-gradient(135deg, #0D4F91 0%, #073B78 50%, #062B59 100%)',
-              }}
+          <div className="relative rounded-2xl overflow-hidden aspect-[4/5] bg-navy-deep shadow-xl">
+            <motion.img 
+              src={aboutImg} 
+              alt="LogicTech Solutions team" 
+              animate={{ scale: [1, 1.08, 1] }}
+              transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut' }}
+              className="absolute inset-0 w-full h-full object-cover opacity-95"
             />
-            <svg viewBox="0 0 400 500" className="absolute inset-0 w-full h-full" aria-hidden="true">
-              <defs>
-                <linearGradient id="aboutGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#0D4F91" />
-                  <stop offset="100%" stopColor="#F5A400" />
-                </linearGradient>
-              </defs>
-              <polygon points="200,120 280,320 120,320" fill="none" stroke="url(#aboutGrad)" strokeWidth="2.5" />
-              <polygon points="240,220 280,320 200,320" fill="url(#aboutGrad)" opacity="0.7" />
-              <circle cx="200" cy="250" r="150" fill="none" stroke="#ffffff" strokeOpacity="0.08" strokeWidth="1" />
-            </svg>
+            <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/90 via-navy-deep/10 to-transparent pointer-events-none" />
             <div className="absolute bottom-6 left-6 right-6 rounded-xl bg-white/10 backdrop-blur-md border border-white/15 p-5">
               <p className="text-white/90 text-sm">
                 A technology partner focused on solutions that hold up in production, not just in a demo.

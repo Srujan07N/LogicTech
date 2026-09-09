@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Mail, Phone, MapPin, Clock, CheckCircle2, AlertCircle } from 'lucide-react'
 import Reveal from './Reveal'
 import SectionHeading from './SectionHeading'
-import { contactInfo } from '../data/content'
+import { contactInfo, socials } from '../data/content'
 
 const services = [
   'Software Development', 'Web Development', 'Mobile App Development',
@@ -74,11 +74,33 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-xs text-ink/50">{item.label}</p>
-                  <p className="text-sm font-medium text-navy-deep">{item.value}</p>
+                  {item.label === 'Email' ? (
+                    <a href={`mailto:${item.value}`} className="text-sm font-medium text-navy-deep hover:text-gold transition-colors">{item.value}</a>
+                  ) : (
+                    <p className="text-sm font-medium text-navy-deep">{item.value}</p>
+                  )}
                 </div>
               </Reveal>
             ))}
           </div>
+
+          <Reveal className="mt-10">
+            <p className="text-sm font-medium text-navy-deep mb-4">Follow us</p>
+            <div className="flex items-center gap-3">
+              {socials.map((s) => (
+                <a
+                  key={s.label}
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={s.label}
+                  className="h-10 w-10 rounded-full bg-navy/5 flex items-center justify-center text-navy hover:bg-gold hover:text-white transition-colors"
+                >
+                  <s.icon size={18} />
+                </a>
+              ))}
+            </div>
+          </Reveal>
         </div>
 
         <Reveal>

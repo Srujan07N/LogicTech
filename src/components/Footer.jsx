@@ -25,6 +25,8 @@ export default function Footer() {
                 key={s.label}
                 href={s.href}
                 aria-label={s.label}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="h-9 w-9 rounded-full border border-white/15 flex items-center justify-center hover:border-gold hover:text-gold transition-colors"
               >
                 <s.icon size={15} />
@@ -58,7 +60,7 @@ export default function Footer() {
         <div>
           <h3 className="text-white font-semibold text-sm mb-4">Contact</h3>
           <ul className="space-y-3 text-sm">
-            <li className="flex items-start gap-2.5"><Mail size={15} className="mt-0.5 shrink-0" /> {contactInfo.email}</li>
+            <li className="flex items-start gap-2.5"><Mail size={15} className="mt-0.5 shrink-0" /> <a href={`mailto:${contactInfo.email}`} className="hover:text-gold transition-colors">{contactInfo.email}</a></li>
             <li className="flex items-start gap-2.5"><Phone size={15} className="mt-0.5 shrink-0" /> {contactInfo.phone}</li>
             <li className="flex items-start gap-2.5"><MapPin size={15} className="mt-0.5 shrink-0" /> {contactInfo.address}</li>
           </ul>
