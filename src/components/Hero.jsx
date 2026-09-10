@@ -1,37 +1,27 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
+import heroVideo from '../assets/convert_this_image_to_video_l.mp4'
 
 const ease = [0.22, 1, 0.36, 1]
 
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-navy-deep pt-32 pb-24 md:pt-44 md:pb-32">
-      {/* subtle grid */}
-      <div
-        className="absolute inset-0 opacity-[0.06]"
-        style={{
-          backgroundImage:
-            'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)',
-          backgroundSize: '56px 56px',
-        }}
-        aria-hidden="true"
-      />
-      {/* slow-moving glow */}
-      <motion.div
-        className="absolute -right-40 top-10 h-[520px] w-[520px] rounded-full bg-gold/20 blur-[120px]"
-        animate={{ x: [0, -30, 0], y: [0, 20, 0] }}
-        transition={{ duration: 22, repeat: Infinity, ease: 'easeInOut' }}
-        aria-hidden="true"
-      />
-      <motion.div
-        className="absolute -left-32 bottom-0 h-[420px] w-[420px] rounded-full bg-blue/30 blur-[110px]"
-        animate={{ x: [0, 25, 0], y: [0, -15, 0] }}
-        transition={{ duration: 26, repeat: Infinity, ease: 'easeInOut' }}
-        aria-hidden="true"
-      />
+      {/* background video */}
+      <div className="absolute inset-0 z-0 bg-navy-deep">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="h-full w-full object-cover opacity-50"
+        >
+          <source src={heroVideo} type="video/mp4" />
+        </video>
+      </div>
 
-      <div className="container-px relative grid lg:grid-cols-[1.1fr_0.9fr] gap-16 items-center">
+      <div className="container-px relative z-10 grid lg:grid-cols-[1.1fr_0.9fr] gap-16 items-center">
         <div>
           <motion.div
             initial={{ opacity: 0, y: 14 }}
