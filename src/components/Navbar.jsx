@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, ArrowRight } from 'lucide-react'
 import { nav } from '../data/content'
-import logo from '../assets/L.jpeg'
+import logo from '../assets/LG.png'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -35,7 +35,7 @@ export default function Navbar() {
         <Link to="/" className="flex items-center gap-2 shrink-0" aria-label="LogicTech Solutions home">
           <motion.img
             src={logo}
-            alt="LogicTech Solutions logo"
+            alt="LogicTech  logo"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             whileHover={{ scale: 1.03 }}
@@ -43,7 +43,7 @@ export default function Navbar() {
             className="h-12 w-12 object-contain"
           />
           <span className={`font-display font-semibold text-lg leading-none hidden sm:block ${scrolled ? 'text-navy-deep' : 'text-white'}`}>
-            LogicTech<span className="text-gold"> Solutions</span>
+            LogicTech<span className="text-gold"> </span>
           </span>
         </Link>
 

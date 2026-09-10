@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Mail, Phone, MapPin } from 'lucide-react'
-import logo from '../assets/logo.png'
+import logo from '../assets/LG.png'
 import { nav, contactInfo, socials } from '../data/content'
 
 const serviceLinks = [
@@ -14,7 +14,7 @@ export default function Footer() {
         <div className="lg:pr-6">
           <Link to="/" className="flex items-center gap-2">
             <img src={logo} alt="LogicTech Solutions logo" className="h-11 w-11 object-contain" />
-            <span className="font-display font-semibold text-white">LogicTech<span className="text-gold"> Solutions</span></span>
+            <span className="font-display font-semibold text-white">LogicTech<span className="text-gold"> </span></span>
           </Link>
           <p className="mt-4 text-sm leading-relaxed">
             Practical, scalable technology solutions for growing businesses — software, cloud, and digital transformation.
@@ -69,7 +69,7 @@ export default function Footer() {
 
       <div className="border-t border-white/10">
         <div className="container-px py-6 flex flex-wrap items-center justify-between gap-4 text-xs text-white/50">
-          <p>© 2026 LogicTech Solutions. All rights reserved.</p>
+          <p>© 2026 LogicTech. All rights reserved.</p>
           <div className="flex items-center gap-6">
             <a href="#" className="hover:text-gold transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-gold transition-colors">Terms &amp; Conditions</a>

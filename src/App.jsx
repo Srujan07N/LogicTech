@@ -19,16 +19,16 @@ export default function App() {
   const location = useLocation()
 
   useEffect(() => {
-    // Simulate loading time (e.g. for fetching initial data, fonts, or images)
+    // Safety fallback timer in case animation hangs
     const timer = setTimeout(() => {
       setIsLoading(false)
-    }, 2000)
+    }, 6000)
     return () => clearTimeout(timer)
   }, [])
   return (
     <div className="min-h-screen bg-bg-light">
       <AnimatePresence>
-        {isLoading && <Loader key="loader" />}
+        {isLoading && <Loader key="loader" onComplete={() => setIsLoading(false)} />}
       </AnimatePresence>
 
       <a

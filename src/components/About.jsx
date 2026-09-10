@@ -18,7 +18,7 @@ export default function About() {
           <div className="relative rounded-2xl overflow-hidden aspect-[4/5] bg-navy-deep shadow-xl">
             <motion.img 
               src={aboutImg} 
-              alt="LogicTech Solutions team" 
+              alt="LogicTech team" 
               animate={{ scale: [1, 1.08, 1] }}
               transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut' }}
               className="absolute inset-0 w-full h-full object-cover opacity-95"
@@ -34,9 +34,9 @@ export default function About() {
 
         <div className="order-1 lg:order-2">
           <SectionHeading
-            kicker="About LogicTech Solutions"
+            kicker="About LogicTech "
             title="Technology that moves businesses forward"
-            desc="LogicTech Solutions designs, builds, and maintains practical, scalable technology for growing companies — from custom software to cloud infrastructure. We focus on solutions our clients can actually run, maintain, and grow with."
+            desc="LogicTech  designs, builds, and maintains practical, scalable technology for growing companies — from custom software to cloud infrastructure. We focus on solutions our clients can actually run, maintain, and grow with."
           />
 
           <div className="mt-10 grid sm:grid-cols-3 gap-6">
